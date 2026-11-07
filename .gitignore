@@ -30,3 +30,10 @@ HELP.md
 
 ### Mac ###
 **/.DS_Store
+
+### Archivos locales y de apoyo ###
+*.log
+logs/
+GUIA_*.md
+TEXTO_*.md
+*.zip
