@@ -105,8 +105,6 @@ public class VetSpecialtyServiceImpl implements VetSpecialtyService {
                 .map(specialtyMapper::mapToDto)
                 .collect(Collectors.toList());
 
-        specialties.forEach(specialty -> log.info("{}", specialty));
-
         return specialties;
     }
 
@@ -127,8 +125,6 @@ public class VetSpecialtyServiceImpl implements VetSpecialtyService {
                 .stream()
                 .map(vetMapper::mapToDto)
                 .collect(Collectors.toList());
-
-        vets.forEach(vet -> log.info("{}", vet));
 
         return vets;
     }

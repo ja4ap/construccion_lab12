@@ -62,8 +62,6 @@ public class SpecialtyServiceImpl implements SpecialtyService {
 
         List<Specialty> specialties = specialtyRepository.findByName(name);
 
-        specialties.forEach(specialty -> log.info("{}", specialty));
-
         return specialties.stream()
                 .map(specialtyMapper::mapToDto)
                 .collect(Collectors.toList());
@@ -73,8 +71,6 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     public List<SpecialtyDTO> findByOffice(String office) {
 
         List<Specialty> specialties = specialtyRepository.findByOffice(office);
-
-        specialties.forEach(specialty -> log.info("{}", specialty));
 
         return specialties.stream()
                 .map(specialtyMapper::mapToDto)

@@ -62,8 +62,6 @@ public class VisitServiceImpl implements VisitService {
 
         List<Visit> visits = visitRepository.findByPetId(petId);
 
-        visits.forEach(visit -> log.info("{}", visit));
-
         return visits.stream()
                 .map(visitMapper::mapToDto)
                 .collect(Collectors.toList());
@@ -73,8 +71,6 @@ public class VisitServiceImpl implements VisitService {
     public List<VisitDTO> findByVetId(Integer vetId) {
 
         List<Visit> visits = visitRepository.findByVetId(vetId);
-
-        visits.forEach(visit -> log.info("{}", visit));
 
         return visits.stream()
                 .map(visitMapper::mapToDto)

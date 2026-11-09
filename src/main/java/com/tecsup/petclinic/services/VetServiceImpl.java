@@ -64,8 +64,6 @@ public class VetServiceImpl implements VetService {
 
         List<Vet> vets = vetRepository.findByLastName(lastName);
 
-        vets.forEach(vet -> log.info("{}", vet));
-
         return vets.stream()
                 .map(vetMapper::mapToDto)
                 .collect(Collectors.toList());

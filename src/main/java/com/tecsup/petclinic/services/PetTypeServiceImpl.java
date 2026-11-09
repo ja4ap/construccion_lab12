@@ -64,8 +64,6 @@ public class PetTypeServiceImpl implements PetTypeService {
 
         List<PetType> petTypes = petTypeRepository.findByName(name);
 
-        petTypes.forEach(petType -> log.info("{}", petType));
-
         return petTypes.stream()
                 .map(petTypeMapper::mapToDto)
                 .collect(Collectors.toList());

@@ -66,8 +66,6 @@ public class OwnerServiceImpl implements OwnerService {
 
         List<Owner> owners = ownerRepository.findByLastName(lastName);
 
-        owners.forEach(owner -> log.info("{}", owner));
-
         return owners.stream()
                 .map(ownerMapper::mapToDto)
                 .collect(Collectors.toList());
@@ -77,8 +75,6 @@ public class OwnerServiceImpl implements OwnerService {
     public List<OwnerDTO> findByCity(String city) {
 
         List<Owner> owners = ownerRepository.findByCity(city);
-
-        owners.forEach(owner -> log.info("{}", owner));
 
         return owners.stream()
                 .map(ownerMapper::mapToDto)
